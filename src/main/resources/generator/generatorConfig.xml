@@ -20,9 +20,9 @@
                         password="${spring.datasource.password}">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.steve.model" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.steve.entity" targetProject="src/main/java"/>
 
-        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+        <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources"/>
 
         <javaClientGenerator targetPackage="com.steve.dao" targetProject="src/main/java"
                              type="XMLMAPPER"/>
