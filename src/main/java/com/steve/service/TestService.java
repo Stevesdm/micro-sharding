@@ -7,6 +7,8 @@ import com.steve.entity.OrderItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Random;
+
 /**
  * @Description:
  * @Author: stevejobson
@@ -27,11 +29,15 @@ public class TestService {
         orderItemMapper.createIfNotExistsTable();
         orderMapper.truncateTable();
         orderItemMapper.truncateTable();
+
+        Random random = new Random();
 //        List<Long> orderIds = new ArrayList<>(10);
 //        System.out.println("1.Insert--------------");
         for (int i = 0; i < 10; i++) {
+
+            int userId = random.nextInt(10);
             Order order = new Order();
-            order.setUserId(51);
+            order.setUserId(userId);
             order.setStatus("INSERT_TEST");
             orderMapper.insert(order);
             long orderId = order.getOrderId();
@@ -39,7 +45,7 @@ public class TestService {
 
             OrderItem item = new OrderItem();
             item.setOrderId(orderId);
-            item.setUserId(51);
+            item.setUserId(userId);
             item.setStatus("INSERT_TEST");
             orderItemMapper.insert(item);
         }
