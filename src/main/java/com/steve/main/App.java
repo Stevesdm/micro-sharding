@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @SpringBootApplication
 @EnableTransactionManagement
-@MapperScan(basePackages = "com.steve.dao")
+@MapperScan(basePackages = "com.steve.dao") //或者使用在Mapper类上添加@Mapper的方法
 @ComponentScan("com.steve")
 public class App {
 
